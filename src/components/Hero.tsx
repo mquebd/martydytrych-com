@@ -14,62 +14,129 @@ function LinkedInMark({ className }: { className?: string }) {
   );
 }
 
+function XMark({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
+    </svg>
+  );
+}
+
+function SubstackMark({ className }: { className?: string }) {
+  return (
+    <svg
+      viewBox="0 0 24 24"
+      fill="currentColor"
+      className={className}
+      aria-hidden="true"
+    >
+      <path d="M22.539 8.242H1.46V5.406h21.08zM1.46 10.812V24L12 18.11 22.54 24V10.812zM22.54 0H1.46v2.836h21.08z" />
+    </svg>
+  );
+}
+
+const industries = [
+  "Operators",
+  "Midstream",
+  "Petrochemical",
+  "Refineries",
+  "Power Generation & Utilities",
+  "Industrial Distribution & Manufacturing",
+];
+
 export function Hero() {
   return (
-    <section className="flex min-h-screen items-center px-6 py-24">
-      <div className="mx-auto w-full max-w-2xl">
+    <section className="px-6 pt-12 pb-4 md:pt-16 md:pb-6">
+      <div className="mx-auto w-full max-w-2xl text-center">
         <FadeIn>
-          <div className="mb-8 flex items-center gap-2 text-sm text-muted">
-            <span className="relative flex h-2 w-2">
-              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-mint opacity-60" />
-              <span className="relative inline-flex h-2 w-2 rounded-full bg-mint" />
+          <div className="mb-10 inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1 text-[12px] font-medium text-muted">
+            <span className="relative flex h-1.5 w-1.5">
+              <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-mint opacity-70" />
+              <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-mint" />
             </span>
-            <span>Currently building at Bolo AI · Speaking · Writing</span>
+            <span>
+              Currently building at Bolo AI · Speaking · Writing
+            </span>
           </div>
 
           <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
             Hi, I&rsquo;m{" "}
-            <span className="relative inline-block">
+            <span className="relative inline-block whitespace-nowrap">
               <span className="relative z-10">Marty Dytrych</span>
               <span
                 aria-hidden
-                className="absolute inset-x-0 bottom-1 -z-0 h-3 bg-mint/70 md:bottom-2 md:h-4"
+                className="absolute inset-x-[-2px] bottom-[6px] -z-0 h-3 bg-mint/70 md:bottom-[8px] md:h-4"
               />
             </span>
             .
           </h1>
 
-          <p className="mt-8 text-lg leading-relaxed text-foreground/90 md:text-xl">
-            Industrial startup founder · Sales &amp; GTM · AI-powered operator.
+          <p className="mx-auto mt-7 max-w-xl text-balance text-base leading-relaxed text-foreground/85 md:text-lg">
+            Building AI Agents that Pay for Themselves
+          </p>
+          <p className="mx-auto mt-2 text-sm text-foreground/85 md:text-base">
+            Operator · Builder · Houston, TX
           </p>
 
-          <p className="mt-6 text-base leading-relaxed text-foreground/80 md:text-lg">
-            {/* TODO: 2–3 sentence bio. Covers 15+ years industrial, IDL founder, Bolo AI,
-                and what the through-line is. Written in Marty&rsquo;s voice — specific,
-                grounded, zero buzzwords. */}
-            Fifteen-plus years in heavy industry — valves, refineries, chemical
-            plants, utilities — then founded Industrial Data Labs to bring AI
-            into industrial sales workflows. Today, Director of Sales at Bolo AI,
-            building AI agents for the plants and operators that keep the world
-            running.
+          <div className="mx-auto mt-7 max-w-xl">
+            <div className="mb-2 text-sm font-normal text-foreground/85">
+              Industrial Focus:
+            </div>
+            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm font-normal text-foreground/85">
+              {industries.map((name, i) => (
+                <span key={name} className="contents">
+                  <span className="whitespace-nowrap">{name}</span>
+                  {i < industries.length - 1 && (
+                    <span className="text-border">|</span>
+                  )}
+                </span>
+              ))}
+            </div>
+          </div>
+
+          <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-foreground/85 md:text-lg">
+            15+ years inside operations before bringing AI into them.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center gap-3">
+          <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
             <a
               href="https://www.linkedin.com/in/martydytrych/"
               target="_blank"
               rel="noopener noreferrer"
-              className="group inline-flex items-center gap-2 rounded-full border border-foreground bg-foreground px-5 py-2.5 text-sm font-semibold text-background transition hover:bg-foreground/90"
+              className="inline-flex items-center gap-1.5 rounded-full bg-foreground px-3.5 py-1.5 text-[13px] font-medium text-background transition hover:bg-foreground/85"
             >
-              <LinkedInMark className="h-4 w-4" />
+              <LinkedInMark className="h-3.5 w-3.5" />
               LinkedIn
             </a>
             <a
               href="mailto:marty@martydytrych.com"
-              className="group inline-flex items-center gap-2 rounded-full border border-border bg-background px-5 py-2.5 text-sm font-semibold text-foreground transition hover:border-foreground"
+              className="inline-flex items-center gap-1.5 rounded-full border border-foreground/15 bg-background px-3.5 py-1.5 text-[13px] font-medium text-foreground/85 transition hover:border-foreground/40 hover:text-foreground"
             >
-              <Mail className="h-4 w-4" strokeWidth={2} />
+              <Mail className="h-3.5 w-3.5" strokeWidth={1.75} />
               Email
+            </a>
+            <a
+              href="https://thefrictionlayer.substack.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-foreground/15 bg-background px-3.5 py-1.5 text-[13px] font-medium text-foreground/85 transition hover:border-foreground/40 hover:text-foreground"
+            >
+              <SubstackMark className="h-3 w-3" />
+              Substack
+            </a>
+            <a
+              href="https://x.com/Martydytrych"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-1.5 rounded-full border border-foreground/15 bg-background px-3.5 py-1.5 text-[13px] font-medium text-foreground/85 transition hover:border-foreground/40 hover:text-foreground"
+            >
+              <XMark className="h-3 w-3" />
+              X
             </a>
           </div>
         </FadeIn>

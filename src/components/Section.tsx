@@ -9,7 +9,7 @@ type Props = {
 
 export function Section({ kicker, id, children, className = "" }: Props) {
   return (
-    <section id={id} className={`py-16 md:py-24 ${className}`}>
+    <section id={id} className={`py-6 md:py-8 ${className}`}>
       <div className="mx-auto w-full max-w-2xl px-6">
         <FadeIn>
           <div className="mb-8 flex items-baseline gap-4">
