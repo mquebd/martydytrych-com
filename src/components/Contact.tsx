@@ -12,13 +12,6 @@ export function Contact() {
           className="font-semibold text-foreground underline decoration-mint decoration-[2px] underline-offset-[5px] transition hover:decoration-foreground"
         >
           LinkedIn
-        </a>{" "}
-        or{" "}
-        <a
-          href="mailto:marty@martydytrych.com"
-          className="font-semibold text-foreground underline decoration-mint decoration-[2px] underline-offset-[5px] transition hover:decoration-foreground"
-        >
-          marty@martydytrych.com
         </a>
         .
       </p>

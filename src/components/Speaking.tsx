@@ -21,7 +21,7 @@ const events: Event[] = [
 export function Speaking() {
   return (
     <Section kicker="Speaking Engagements" id="speaking">
-      <p className="mb-5 text-pretty text-base font-semibold tracking-tight text-foreground md:text-lg">
+      <p className="mb-5 text-left text-base font-semibold tracking-tight text-foreground md:text-lg">
         Bringing the AI conversation from the boardroom to the plant floor.
       </p>
       <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">

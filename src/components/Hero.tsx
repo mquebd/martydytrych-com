@@ -1,5 +1,4 @@
 import { FadeIn } from "./FadeIn";
-import { Mail } from "lucide-react";
 
 function LinkedInMark({ className }: { className?: string }) {
   return (
@@ -52,9 +51,9 @@ const industries = [
 export function Hero() {
   return (
     <section className="px-6 pt-12 pb-4 md:pt-16 md:pb-6">
-      <div className="mx-auto w-full max-w-2xl text-center">
+      <div className="mx-auto w-full max-w-2xl">
         <FadeIn>
-          <div className="mb-10 inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1 text-[12px] font-medium text-muted">
+          <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-border bg-background px-3 py-1 text-[12px] font-medium text-muted">
             <span className="relative flex h-1.5 w-1.5">
               <span className="absolute inline-flex h-full w-full animate-ping rounded-full bg-mint opacity-70" />
               <span className="relative inline-flex h-1.5 w-1.5 rounded-full bg-mint" />
@@ -64,46 +63,49 @@ export function Hero() {
             </span>
           </div>
 
-          <h1 className="text-5xl font-extrabold leading-[1.05] tracking-tight md:text-6xl">
+          <h1 className="text-4xl font-extrabold leading-[1.05] tracking-tight md:text-5xl">
             Hi, I&rsquo;m{" "}
             <span className="relative inline-block whitespace-nowrap">
               <span className="relative z-10">Marty Dytrych</span>
               <span
                 aria-hidden
-                className="absolute inset-x-[-2px] bottom-[6px] -z-0 h-3 bg-mint/70 md:bottom-[8px] md:h-4"
+                className="absolute inset-x-[-2px] bottom-[5px] -z-0 h-2.5 bg-mint/70 md:bottom-[6px] md:h-3"
               />
             </span>
             .
           </h1>
 
-          <p className="mx-auto mt-7 max-w-xl text-balance text-base leading-relaxed text-foreground/85 md:text-lg">
+          <p className="mt-6 text-xl leading-relaxed text-foreground/85 md:text-2xl">
             Building AI Agents that Pay for Themselves
           </p>
-          <p className="mx-auto mt-2 text-sm text-foreground/85 md:text-base">
+          <p className="mt-1.5 text-lg text-foreground/85 md:text-xl">
             Operator · Builder · Houston, TX
           </p>
 
-          <div className="mx-auto mt-7 max-w-xl">
-            <div className="mb-2 text-sm font-normal text-foreground/85">
-              Industrial Focus:
+          <div className="mt-8">
+            <div className="mb-6 flex items-baseline gap-4">
+              <span className="text-sm font-medium uppercase tracking-[0.18em] text-muted">
+                Industrial Focus
+              </span>
+              <span className="h-px flex-1 bg-border" />
             </div>
-            <div className="flex flex-wrap items-center justify-center gap-x-3 gap-y-1 text-sm font-normal text-foreground/85">
-              {industries.map((name, i) => (
-                <span key={name} className="contents">
-                  <span className="whitespace-nowrap">{name}</span>
-                  {i < industries.length - 1 && (
-                    <span className="text-border">|</span>
-                  )}
-                </span>
+            <div className="grid grid-cols-1 gap-2 sm:grid-cols-2">
+              {industries.map((name) => (
+                <div
+                  key={name}
+                  className="rounded-lg border border-foreground/10 bg-background px-4 py-3 text-[14px] font-medium text-foreground/90"
+                >
+                  {name}
+                </div>
               ))}
             </div>
           </div>
 
-          <p className="mx-auto mt-8 max-w-xl text-base leading-relaxed text-foreground/85 md:text-lg">
+          <p className="mt-8 text-lg leading-relaxed text-foreground/85 md:text-xl">
             15+ years inside operations before bringing AI into them.
           </p>
 
-          <div className="mt-10 flex flex-wrap items-center justify-center gap-2">
+          <div className="mt-8 flex flex-wrap items-center gap-2">
             <a
               href="https://www.linkedin.com/in/martydytrych/"
               target="_blank"
@@ -112,13 +114,6 @@ export function Hero() {
             >
               <LinkedInMark className="h-3.5 w-3.5" />
               LinkedIn
-            </a>
-            <a
-              href="mailto:marty@martydytrych.com"
-              className="inline-flex items-center gap-1.5 rounded-full border border-foreground/15 bg-background px-3.5 py-1.5 text-[13px] font-medium text-foreground/85 transition hover:border-foreground/40 hover:text-foreground"
-            >
-              <Mail className="h-3.5 w-3.5" strokeWidth={1.75} />
-              Email
             </a>
             <a
               href="https://thefrictionlayer.substack.com/"
